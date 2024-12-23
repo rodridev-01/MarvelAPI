@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Wiki</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <header class="wiki-header">
+        <h1>Marvel Character Wiki</h1>
+    </header>
+    <main class="wiki-container">
+        <aside class="character-list">
+            <div id="characterList" class="character-grid"></div>
+            <div class="pagination">
+                <button id="prevPage" class="pagination-btn">Previous</button>
+                <button id="nextPage" class="pagination-btn">Next</button>
+            </div>
+        </aside>
+        <section class="character-details">
+            <div class="character-display">
+                <img id="characterImage" src="" alt="Character Image" class="character-image">
+                <h2 id="characterName"></h2>
+                <p id="characterDescription"></p>
+            </div>
+            
+            <div class="character-info">
+                <h3>Comics:</h3>
+                <ul id="characterComics"></ul>
+        
+                <h3>Series:</h3>
+                <ul id="characterSeries"></ul>
+        
+                <h3>Events:</h3>
+                <ul id="characterEvents"></ul>
+        
+                <h3>Aliases:</h3>
+                <p id="characterAliases"></p>
+            </div>
+        </section>
+        
+    </main>
+    <footer class="wiki-footer">
+        Powered by Marvel API
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

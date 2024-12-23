@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #101010;  
+    color: #fff;
+    padding: 0;
+    overflow-x: hidden;
+}
+header.wiki-header {
+    background-color: #e62429;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    width: 100%; 
+}
+
+main.wiki-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center; 
+    height: calc(100vh - 120px); 
+    margin: 0 auto; 
+    width: 80%; 
+}
+
+aside.character-list {
+    flex: 75%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); 
+    gap: 10px;
+    padding: 10px;
+    height: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.character-option {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #222;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.character-option img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 3px solid #f7c02b;
+}
+
+.character-option p {
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #1d1d1d;
+    padding: 5px;
+    margin: 0;
+}
+
+.character-option:hover {
+    transform: scale(1.05);
+    border-color: #e62429;
+    box-shadow: 0 0 15px rgba(230, 36, 41, 0.8);
+}
+
+
+section.character-details {
+    flex: 0 1 50%; 
+    padding: 20px; 
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between;
+    border-radius: 12px;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.character-display {
+    width: 50%;  
+    margin-right: 2%;  
+    text-align: left;
+}
+
+.character-image {
+    width: 100%;  
+    max-width: 400px;  
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px; 
+}
+
+.character-info {
+    width: 100%; 
+}
+
+.character-info h3 {
+    background-color: #e62429;
+    margin: 10px 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: 'Bangers', sans-serif;
+    letter-spacing: 2px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.character-details h2 {
+    color: #f7c02b;  
+    margin: 10px 0;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-family: 'Bangers', sans-serif;
+    letter-spacing: 2px;
+    text-align: center; 
+}
+
+.character-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #ccc;
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.character-comics {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center; 
+}
+
+.character-comics li {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #f7c02b;  
+    font-weight: bold;
+}
+
+.character-comics li::before {
+    content: "🃏 ";
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #111;
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+
+.pagination-btn {
+    background-color: #f7c02b;
+    color: #111;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    flex: 1 1 auto; 
+    text-align: center;
+}
+
+.pagination-btn:hover {
+    background-color: #e0a523;
+}
+
+footer.wiki-footer {
+    background-color: #111;
+    text-align: center;
+    padding: 10px 0;
+    color: #ccc;
+    font-size: 14px;
+    border-top: 2px solid #333;
+    width: 100%; 
+}
+
+/* Media Query para Mobile */
+@media (max-width: 768px) {
+    main.wiki-container {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .character-info h3 {
+        font-size: 12px;
+    }
+
+    .character-image { 
+        max-width: 200px;
+        max-height: 200px;  
+    }
+
+    section.character-details {
+        order: 1; 
+        width: 100%;
+        margin-bottom: 20px; 
+        font-size: 10px;
+    }
+
+    aside.character-list {
+        order: 2; 
+        width: 100%; 
+        height: auto;
+        flex-direction: row; 
+        gap: 5px;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 5px; 
+    }
+
+    .character-option {
+        padding-top: 100%; 
+    }
+
+    .pagination {
+        flex-direction: column; 
+        align-items: center; /
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .pagination-btn {
+        width: 100%; 
+        margin: 5px 0; 
+    }
+}
